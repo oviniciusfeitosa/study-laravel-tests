@@ -27,4 +27,12 @@ class MeuPrimeiroTest extends TestCase
         $this->assertTrue($caixa->contem('mochila'));
         $this->assertFalse($caixa->contem('cubo magico'));
     }
+
+    public function testCaixaContemUmItem()
+    {
+        $caixa = new Caixa(['lençol']);
+        $this->assertEquals('lençol', $caixa->pegarUm());
+        // Null, agora a caixa está vazia
+        $this->assertNull($caixa->pegarUm());
+    }
 }
