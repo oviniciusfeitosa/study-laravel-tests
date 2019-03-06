@@ -7,4 +7,5 @@ branches:
 before_install:
   - travis_retry composer self-update
   - composer install
+  - php artisan key:generate
 script: phpunit --bootstrap vendor/autoload.php tests
