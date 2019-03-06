@@ -2,5 +2,10 @@ language: php
 php:
   - '7.0'
   - nightly
-before_script:
+branches:
+  only:
+    master
+before_install:
+  - travis_retry composer self-update
   - composer install
+script: phpunit --bootstrap vendor/autoload.php tests
